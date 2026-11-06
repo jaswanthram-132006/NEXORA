@@ -6,10 +6,12 @@ import FeaturesGrid from "@/components/landing/FeaturesGrid";
 import CourseCards from "@/components/landing/CourseCards";
 import StatsBar from "@/components/landing/StatsBar";
 import VisualizationPreview from "@/components/landing/VisualizationPreview";
+import { CinematicIntro } from "@/components/cinematic-intro";
 
 export default function HomePage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden dark:bg-[#080B12] bg-[#FFFFFF] text-text-primary transition-colors duration-200">
+      <CinematicIntro />
       {/* Ambient background illumination */}
       <div
         aria-hidden="true"

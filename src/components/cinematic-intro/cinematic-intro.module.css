@@ -1,0 +1,142 @@
+/* Scoped CSS Module for NEXORA Video Cinematic Intro */
+.container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background-color: #000000;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+.isFading {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.videoWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle cinematic vignette overlay */
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.8);
+  background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+/* Minimal widescreen film letterbox bars */
+.letterboxTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(12px, 2.5vh, 24px);
+  background: #000000;
+  z-index: 10;
+  pointer-events: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.letterboxBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(12px, 2.5vh, 24px);
+  background: #000000;
+  z-index: 10;
+  pointer-events: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Refined Minimal Skip Button */
+.skipButton {
+  position: absolute;
+  top: clamp(20px, 3.5vh, 40px);
+  right: clamp(20px, 3vw, 40px);
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skipButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(10, 132, 255, 0.45);
+  color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(10, 132, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.skipButton:active {
+  transform: scale(0.97);
+}
+
+.skipBadge {
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Subtle Timeline Progress Track */
+.progressTrack {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  z-index: 20;
+}
+
+.progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0A84FF 0%, #38BDF8 50%, #E2E8F0 100%);
+  box-shadow: 0 0 8px rgba(10, 132, 255, 0.5);
+  transition: width 0.1s linear;
+}
+
