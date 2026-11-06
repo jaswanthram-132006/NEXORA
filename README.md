@@ -83,4 +83,8 @@ src/
 
 ## 📝 License
 
-MIT
+**Proprietary License — All Rights Reserved.**
+
+NEXORA is proprietary software. Viewing the public repository does not grant permission to copy, modify, redistribute, or commercially use its contents.
+
+See the [LICENSE](LICENSE) file for full terms.
